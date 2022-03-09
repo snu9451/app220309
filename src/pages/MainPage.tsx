@@ -131,13 +131,13 @@ class MainPage extends Component<{}, State> {
 
         return (
             <Box width="100%" height="100vh" display="flex" alignItems="center" justifyContent="center" flexDirection="column">
-
-                <Box width="300px" display="flex" justifyContent="flex-start" flexDirection="column" mb={2}>
+                <img src="bong.gif" style={{ width: '200px', position: 'relative', top: '140px', left: '80px' }}/>
+                <Box width="275px" display="flex" justifyContent="flex-start" flexDirection="column" mb={2}>
                     <Chip variant="outlined" style={{ width: 'fit-content', justifyContent: 'flex-start', marginBottom: '10px' }} label={`현재 시간 ⚡ ${current}`}/>
                     <Chip style={{ width: 'fit-content', justifyContent: 'flex-start' }} label={`다음 알림 ⚡ ${nextTime}`}/>
                 </Box>
 
-                <Box display="flex" alignItems="center" justifyContent="flex-start" width="300px">
+                <Box display="flex" alignItems="center" justifyContent="flex-start" width="275px">
                     <Typography>종료:&nbsp;&nbsp;&nbsp;</Typography>
                     <FormControl style={{ width: '100px' }}>
                         <InputLabel id="demo-simple-select-label">시</InputLabel>
@@ -173,7 +173,7 @@ class MainPage extends Component<{}, State> {
                     </FormControl>
                 </Box>
 
-                <Box display="flex" alignItems="center" justifyContent="flex-start" width="300px">
+                <Box display="flex" alignItems="center" justifyContent="flex-start" width="275px">
                     <Typography>간격:&nbsp;&nbsp;&nbsp;</Typography>
                     <FormControl style={{ width: '210px' }}>
                         <InputLabel id="demo-simple-select-label">분</InputLabel>
@@ -193,9 +193,12 @@ class MainPage extends Component<{}, State> {
                     </FormControl>
                 </Box>
 
-                <Box width="300px" display="flex" justifyContent="flex-start" mt={2}>
+                <Box width="275px" display="flex" justifyContent="flex-start" mt={2} mb={10}>
                     <Button onClick={this.handleClick.bind(this)} style={{ width: '260px', height: '60px' }} variant="contained" color={isRunning ? 'secondary' : 'primary'}>{isRunning ? 'STOP' : 'START'}</Button>
                 </Box>
+
+                <img src="bong.jpg" style={{ width: '270px', position: 'relative', top: '-600px' }} />
+
                 <audio ref={this.audioRef} src="ding.mp3">audio failed</audio>
             </Box>
         );
