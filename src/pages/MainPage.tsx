@@ -63,6 +63,7 @@ class MainPage extends Component<{}, State> {
                     if (new Date().getHours() >= endHour && new Date().getMinutes() >= endMin) {
                         clearInterval(this.state.interval);
                         this.setState({ isRunning: false });
+                        this.setState({ nextTime: 'none' });
                     }
                 }, minInterval*60*1000)});
             }
