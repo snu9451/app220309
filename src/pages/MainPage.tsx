@@ -130,7 +130,7 @@ class MainPage extends Component<{}, State> {
         const { endHour, endMin, minInterval, isRunning, current, nextTime } = this.state;
 
         return (
-            <Box width="100%" height="100vh" display="flex" alignItems="center" justifyContent="center" flexDirection="column">
+            <Box width="100%" height="100vh" display="flex" alignItems="center" justifyContent="center" flexDirection="column" mt={17}>
                 <img src="bong.gif" style={{ width: '200px', position: 'relative', top: '140px', left: '80px' }}/>
                 <Box width="275px" display="flex" justifyContent="flex-start" flexDirection="column" mb={2}>
                     <Chip variant="outlined" style={{ width: 'fit-content', justifyContent: 'flex-start', marginBottom: '10px' }} label={`현재 시간 ⚡ ${current}`}/>
