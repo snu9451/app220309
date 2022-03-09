@@ -76,11 +76,21 @@ class MainPage extends Component<{}, State> {
 
     handleEndHourSelect(event: SelectChangeEvent) {
         //
+        if (new Date().getHours() > this.resolveStringToNumber(event.target.value as string)) {
+            alert(`현재시간(${new Date().getHours()}시 ${new Date().getMinutes()}분)보다 작은 값을 선택할 수 없습니다.`);
+            return;
+        }
         this.setState({ endHour: this.resolveStringToNumber(event.target.value as string) });
     }
 
     handleEndMinSelect(event: SelectChangeEvent) {
         //
+        const { endHour } = this.state;
+
+        if (new Date().getHours() === endHour && new Date().getMinutes() > this.resolveStringToNumber(event.target.value as string)) {
+            alert(`현재시간(${new Date().getHours()}시 ${new Date().getMinutes()}분)보다 작은 값을 선택할 수 없습니다.`);
+            return;
+        }
         this.setState({ endMin: this.resolveStringToNumber(event.target.value as string) });
     }
 
